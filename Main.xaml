@@ -1,0 +1,155 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="825.6,1497.6" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:la="clr-namespace:Library_ACME_Chrome.ACME_InvoiceProcessing;assembly=Library_ACME_Chrome" xmlns:lb="clr-namespace:Library_ACME_Chrome.BasicActions;assembly=Library_ACME_Chrome" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ss="clr-namespace:System.Security;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="64">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>Library_ACME_Chrome.BasicActions</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>Library_ACME_Chrome.ACME_InvoiceProcessing</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="62">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>Library_ACME_Chrome_Expressions_43023585</AssemblyReference>
+      <AssemblyReference>Library_ACME_Chrome_Expressions_26381988</AssemblyReference>
+      <AssemblyReference>Library_ACME_Chrome_Expressions_32496801</AssemblyReference>
+      <AssemblyReference>Library_ACME_Chrome</AssemblyReference>
+      <AssemblyReference>Library_ACME_Chrome_Expressions_35386152</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Dispatcher" sap:VirtualizedContainerService.HintSize="836,1392.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="ss:SecureString" Name="ss_Password" />
+      <Variable x:TypeArguments="x:String" Name="str_Username" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_Invoices" />
+      <Variable x:TypeArguments="x:Boolean" Name="MasterInvoiceFileExists" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="ACME_Credentials" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="794.4,22.4" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[ss_Password]" Username="[str_Username]" />
+    <lb:ACME_Launch sap:VirtualizedContainerService.HintSize="794.4,22.4" sap2010:WorkflowViewState.IdRef="ACME_Launch_1" />
+    <lb:ACME_Login sap:VirtualizedContainerService.HintSize="794.4,22.4" sap2010:WorkflowViewState.IdRef="ACME_Login_1" in_str_ACMEPassword="[ss_Password]" in_str_ACMEUsername="[str_Username]" />
+    <la:ACME_FetchInvoices sap:VirtualizedContainerService.HintSize="794.4,22.4" sap2010:WorkflowViewState.IdRef="ACME_FetchInvoices_1" out_dt_Invoices="[dt_Invoices]" />
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dt_Invoices]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="794.4,264" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="241.6,115.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" ContinueOnError="True" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="200,22.4" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="001_InvoiceTransferProcess_Invoices" Reference="[row(&quot;Invoice Number&quot;).ToString]">
+              <ui:AddQueueItem.ItemInformation>
+                <InArgument x:TypeArguments="x:String" x:Key="InvoiceNumber">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="row(&quot;Invoice Number&quot;).ToString" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="VendorID">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="row(&quot;Vendor Tax ID&quot;).ToString" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="InvoiceItem">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="row(&quot;Invoice Item&quot;).ToString" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Total">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="row(&quot;Total&quot;).ToString" />
+                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Date">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="row(&quot;Date&quot;).ToString" />
+                </InArgument>
+              </ui:AddQueueItem.ItemInformation>
+            </ui:AddQueueItem>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
+    <lb:ACME_Logout sap:VirtualizedContainerService.HintSize="794.4,22.4" sap2010:WorkflowViewState.IdRef="ACME_Logout_1" />
+    <lb:ACME_Close sap:VirtualizedContainerService.HintSize="794.4,22.4" sap2010:WorkflowViewState.IdRef="ACME_Close_1" />
+    <ui:PathExists DisplayName="Path Exists" Exists="[MasterInvoiceFileExists]" sap:VirtualizedContainerService.HintSize="794.4,90.4" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="C:\Users\tehbo\OneDrive - Robiquity Limited\Documents\RPA001_Finance_InvoiceTransferProcess\RPA001_Finance_InvoiceTransferProcess_InvoicesMaster.xlsx" PathType="File" />
+    <If Condition="[MasterInvoiceFileExists = True]" DisplayName="If Master Invoices File Exists" sap:VirtualizedContainerService.HintSize="794.4,491.2" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="375.2,341.6" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:AppendRange DataTable="[dt_Invoices]" DisplayName="Append Range" sap:VirtualizedContainerService.HintSize="333.6,116" sap2010:WorkflowViewState.IdRef="AppendRange_1" SheetName="Sheet1" WorkbookPath="C:\Users\tehbo\OneDrive - Robiquity Limited\Documents\RPA001_Finance_InvoiceTransferProcess\RPA001_Finance_InvoiceTransferProcess_InvoicesMaster.xlsx" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Invoices successfully added to queue and input to 'RPA001_Finance_InvoiceTransferProcess_InvoicesMaster.xlsx'&quot;]" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence sap:VirtualizedContainerService.HintSize="375.2,248" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Error" Message="[&quot;Unable to locate 'RPA001_Finance_InvoiceTransferProcess_InvoicesMaster.xlsx'&quot;]" />
+          <Throw Exception="[new System.Exception(&quot;Unable to locate RPA001_Finance_InvoiceTransferProcess_InvoicesMaster.xlsx&quot;)]" sap:VirtualizedContainerService.HintSize="333.6,22.4" sap2010:WorkflowViewState.IdRef="Throw_1" />
+        </Sequence>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>
