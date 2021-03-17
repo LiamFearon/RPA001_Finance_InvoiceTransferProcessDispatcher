@@ -3,7 +3,7 @@
   "description": "Dummy project for Robiquity training using business standard ReFramework",
   "main": "Main.xaml",
   "dependencies": {
-    "Library_ACME_Chrome": "[1.0.3]",
+    "Library_ACME_Chrome": "[1.0.4]",
     "UiPath.Excel.Activities": "[2.9.3]",
     "UiPath.Mail.Activities": "[1.9.3]",
     "UiPath.System.Activities": "[20.10.1]",
