@@ -1,6 +1,6 @@
 {
   "name": "RPA001_Finance_InvoiceTransferProcessDispatcher",
-  "description": "Blank Process",
+  "description": "Dummy project for Robiquity training using business standard ReFramework",
   "main": "Main.xaml",
   "dependencies": {
     "Library_ACME_Chrome": "[1.0.3]",
